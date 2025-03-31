@@ -101,7 +101,7 @@ def draw_bounding_box_on_image(image,
     # If the total height of the display strings added to the top of the bounding
     # box exceeds the top of the image, stack the strings below the bounding box
     # instead of above.
-    display_str_heights = [font.textbbox((0, 0), ds)[3] for ds in display_str_list]
+    display_str_heights = [font.getmask(ds).getbbox()[3] for ds in display_str_list]
     # Each display_str has a top and bottom margin of 0.05x.
     total_display_str_height = (1 + 2 * 0.05) * sum(display_str_heights)
 
