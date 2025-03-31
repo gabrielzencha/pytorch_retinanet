@@ -112,7 +112,7 @@ def draw_bounding_box_on_image(image,
 
     # Reverse list and print from bottom to top.
     for display_str in display_str_list[::-1]:
-        text_width, text_height = 10
+        text_width, text_height = 5,10
         margin = np.ceil(0.05 * text_height)
         draw.rectangle(
             [
