@@ -99,7 +99,7 @@ class RetinaNetLosses(nn.Module):
         # convert the integer lables into a one-hot vector and omit
         # the first column which corresponds to the 0th class as ,
         # no loss for the first(background) class
-        clas_tgt = F.one_hot(clas_tgt, num_classes=self.n_c + 1)[:, 1:]
+        clas_tgt = F.one_hot(clas_tgt.to(torch.int32), num_classes=self.n_c + 1)[:, 1:]
         clas_tgt = clas_tgt.to(clas_pred.dtype)
         # classification loss
         clas_loss = self.focal_loss(clas_pred, clas_tgt)
