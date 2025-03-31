@@ -8,7 +8,7 @@ def compose_transforms(transforms=None):
     if transforms is None:
         transforms = []
     transforms.append(A.ToFloat(max_value=255.0, always_apply=True),)
-    transforms.append(ToTensorV2(always_apply=True))
+    transforms.append(ToTensorV2())
 
     c = A.Compose(
         transforms,
