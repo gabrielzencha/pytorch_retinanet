@@ -165,7 +165,7 @@ def visualize_boxes_and_labels_on_image_array(image,
     # if scores is None boxes are groundthruth
     # set the scores to be 1 so they become 100 %
     if scores is None:
-        scores = np.ones_like(classes, dtype=np.int)
+        scores = np.ones_like(classes, dtype=np.int32)
 
     for i in range(len(boxes)):
         # Create a display string (and color) for every box location, group any boxes
